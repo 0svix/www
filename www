@@ -20,7 +20,7 @@ function Delete {
   rmdir -R \temp
 }
 
-function Upload-Discord {
+function Upload {
 
 [CmdletBinding()]
 param (
